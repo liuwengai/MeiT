@@ -1,0 +1,203 @@
+@import "_minix.scss";
+@import "common.scss";
+.wrap {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: pxTorem(50px);
+    @include box_flex;
+    @include justify(space-between);
+    padding: 0 pxTorem(15px);
+    @include sizing;
+    font-size: pxTorem(16px);
+    @include align(center);
+    background: #06c1ae;
+    color: #fff;
+    @include flex_shrink(0);
+    h3 {
+        .icon {
+            margin-left: pxTorem(6px);
+            font-size: pxTorem(14px);
+        }
+    }
+    p {
+        line-height: pxTorem(35px);
+        @include flex;
+        margin: 0 pxTorem(10px);
+        border-radius: 5px;
+        background: #05a494;
+        input {
+            outline: none;
+            border: none;
+        }
+        input::-webkit-input-placeholder {
+            color: #68dbce;
+            font-size: pxTorem(14px);
+        }
+        .icon {
+            font-size: pxTorem(20px);
+            margin: 0 pxTorem(10px);
+        }
+    }
+    label {
+        @include box_flex;
+        @include direction(column);
+        text-align: center;
+        span {
+            font-size: pxTorem(12px)!important;
+        }
+        .icon {
+            font-size: pxTorem(24px);
+        }
+    }
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    @include flex;
+    @include flex_shrink(0);
+    overflow: hidden;
+}
+
+.main {
+    height: auto;
+    @include flex;
+    @include box_flex;
+    @include direction(column);
+    position: relative;
+    h6 {
+        img {
+            width: 100%;
+        }
+    }
+    .swiper-container,
+    .swiper-wrapper,
+    .swiper-slide {
+        width: 100%;
+        height: auto;
+        ul {
+            width: 100%;
+            @include box_flex;
+            @include flexWrap(wrap);
+            @include setTopLine;
+            padding-bottom: 20px;
+            li {
+                @include flex;
+                @include box_flex;
+                @include direction(column);
+                @include justify(center);
+                @include align(center);
+                margin: pxTorem(10px) pxTorem(10px);
+                img {
+                    width: pxTorem(45px);
+                    height: pxTorem(45px);
+                }
+                span {
+                    padding-top: pxTorem(10px);
+                }
+            }
+        }
+    }
+    .line {
+        width: 100%;
+        height: pxTorem(10px);
+        background: #eee;
+        margin-top: pxTorem(10px);
+    }
+    .classify {
+        width: 100%;
+        height: auto;
+        @include box_flex;
+        @include direction(column);
+        h2 {
+            width: 100%;
+            line-height: pxTorem(40px);
+            margin-left: pxTorem(10px);
+            font-size: pxTorem(16px);
+            @include setBottomLine;
+        }
+        ul {
+            width: 100%;
+            @include box_flex;
+            @include direction(column);
+            li {
+                width: 95%;
+                @include box_flex;
+                @include setBottomLine;
+                padding-bottom: pxTorem(10px);
+                margin: pxTorem(10px);
+                @include sizing;
+                img {
+                    width: pxTorem(100px);
+                    height: pxTorem(90px);
+                }
+                .content {
+                    @include flex;
+                    margin-left: pxTorem(15px);
+                    font-size: pxTorem(15px);
+                    color: #666;
+                    p {
+                        line-height: 1.6;
+                    }
+                    h5 {
+                        margin-top: pxTorem(20px);
+                        @include box_flex;
+                        @include justify(space-between);
+                        span {
+                            font-size: pxTorem(14px);
+                            em {
+                                color: #05a494;
+                                font-size: pxTorem(18px);
+                            }
+                        }
+                        label {
+                            font-size: pxTorem(14px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#down,
+#up {
+    position: absolute;
+    width: 100%;
+    line-height: 80px;
+    text-align: center;
+}
+
+#down {
+    top: -70px;
+}
+
+#up {
+    bottom: -70px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px!important;
+    height: 15px!important;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 0!important;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 17px!important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #05a494!important;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="inp">
+    <button>搜索</button>
+    <ul class="list"></ul>
+    <script src="js/libs/jquery-3.3.1.min.js"></script>
+    <script>
+        $('.inp').on('input', function() {
+            var val = $(this).val();
+            if (val) {
+                $.ajax({
+                    url: '/login',
+                    data: {
+                        val: val
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        var str = '';
+                        if (data.code == 0) {
+
+                            data.datas.forEach(function(item) {
+                                str += `<li>${item}</li>`;
+                            });
+                            $('.list').append(str);
+                        }
+
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
